@@ -17,4 +17,9 @@ public class SocketSenderService {
         log.info("Enviando mensagem via socket - {}", exampleMessageDTO);
         simpMessagingTemplate.convertAndSend("/topic/greetings", exampleMessageDTO.getMessage());
     }
+
+    public void sendMessageToController(String messagge) {
+        log.info("Enviando mensagem via socket - {}", messagge);
+        simpMessagingTemplate.convertAndSend("/topic/greetings", messagge);
+    }
 }
